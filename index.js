@@ -7,9 +7,10 @@ const mongoose = require('mongoose');
 const app = express();
 
 // connect to mongodb
-mongoose.connect('mongodb://localhost/peopleDB');
+mongoose.connect('mongodb://localhost/peopleDB'); 
 mongoose.Promise = global.Promise;
 
+app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use('/api', routes);
 
